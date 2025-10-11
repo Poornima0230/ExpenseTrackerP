@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+:root {
+  --background: linear-gradient(135deg, #89f6fe59, #66a6ff9f);
+  --containerBg: rgba(255, 255, 255, 0.85);
+  --inputBg: linear-gradient(145deg, #ffffff, #e6e6e6);
+  --buttonBg: linear-gradient(145deg, #66a6ff, #89f7fe);
+  --headingColor: #333;
+  --textShadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  --boxShadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --hoverBS: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+p,
+li,
+a,
+button {
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.6;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+button {
+  background: var(--buttonBg);
+  border: 0.11px solid black;
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  border-radius: 1.2rem;
+}
+
+button:hover {
+  box-shadow: var(--hoverBS);
+  transform: translateY(-2px);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.app {
+  background: var(--background);
+  padding: 2rem;
+  width: 100lvw;
+  border-radius: 2rem;
+  box-shadow: var(--boxShadow);
+}
+
+.app .title {
+  font-size: 3rem;
+}
+
+.app .wish {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.app .date {
+  font-size: 1.5rem;
+  color: #6d6c6c;
+  font-weight: 500;
+}
+
+.addExpenses-container {
+  border: 1px solid grey;
+  box-shadow: var(--boxShadow);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.addExpenses-container h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.amount-container,
+.category-container,
+.note-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--background);
+  border: 0.1px solid rgba(128, 128, 128, 0.582);
+  border-radius: 1rem;
+}
+
+.amount-container input,
+.category-container select,
+.note-container input {
+  width: 60%;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  outline: none;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.expenseList-container {
+  border: 1px solid grey;
+  box-shadow: var(--boxShadow);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.expenseList-container .expense-card {
+  border: 1px solid grey;
+  padding: 2rem;
+  background-image: linear-gradient(360deg, rgb(209, 209, 209), white);
+  border-radius: 2rem;
+}
+
+.expenseList-container .expenseCard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total {
+  font-size: 3rem;
+  text-align: center;
+  padding: 0rem;
+  font-weight: 500;
+  margin: 2rem 0;
+  border: 1px solid grey;
+  border-radius: 2rem;
+}
+
+.clear-btn {
+  align-self: center;
+  margin-left: 40%;
+  text-align: center;
+}
+
+.deleteBtn {
+  font-size: 2rem;
+  margin-top: -0.5rem;
+}
+
+.time-delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.3rem;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.share-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------- Small Devices (Mobile) ----------- */
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  .addExpenses-container,
+  .expenseList-container {
+    padding: 1.5rem;
+  }
+
+  .amount-container,
+  .category-container,
+  .note-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .amount-container input,
+  .category-container select,
+  .note-container input {
+    width: 100%;
+  }
+
+  .add-btn,
+  button {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+
+  .total {
+    font-size: 2.2rem;
+  }
+
+  .expenseList-container .expense-card {
+    padding: 1.2rem;
+  }
+
+  .expenseList-container .expenseCard-item {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* ----------- Medium Devices (Tablet) ----------- */
+@media (min-width: 601px) and (max-width: 992px) {
+  html {
+    font-size: 58%;
+  }
+
+  .app {
+    /* width: 90%; */
+    padding: 2rem;
+  }
+
+  .amount-container input,
+  .category-container select,
+  .note-container input {
+    width: 70%;
+  }
+
+  .total {
+    font-size: 2.5rem;
+  }
+}
+
+/* ----------- Large Devices (Desktop and above) ----------- */
+@media (min-width: 993px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .app {
+    width: 80%;
+    padding: 2rem 3rem;
+    margin: 2rem;
+  }
+}
